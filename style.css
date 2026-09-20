@@ -1,0 +1,278 @@
+/* ============================================================
+   Federico Proverbio — academic site
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #fdfdfb;
+  --surface: #ffffff;
+  --ink: #1c1e1b;
+  --ink-muted: #5b6058;
+  --accent: #14532d;
+  --accent-soft: #e4ede6;
+  --border: #dfe4dd;
+  --max-width: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover, a:focus-visible {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0 0 0.5em;
+}
+
+/* ---------- Layout shell ---------- */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.site-nav .brand {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-nav .links {
+  display: flex;
+  gap: 28px;
+}
+.site-nav .links a {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav .links a:hover,
+.site-nav .links a.active {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Main / footer ---------- */
+main {
+  padding: 56px 0 40px;
+}
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+footer .wrap {
+  padding: 24px;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.hero img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+.hero-text .role {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+}
+.hero-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border: none;
+  margin: 8px 0 24px;
+}
+
+.bio p {
+  margin: 0 0 1.1em;
+  color: var(--ink);
+}
+.bio p:last-child { margin-bottom: 0; }
+
+/* ---------- Contact row ---------- */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+  font-size: 0.95rem;
+}
+.contact-row a {
+  color: var(--ink-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.contact-row a:hover { color: var(--accent); text-decoration: none; }
+.contact-row svg { width: 16px; height: 16px; stroke: currentColor; fill: none; }
+
+/* ---------- Section heading pattern (echoes the CV's green rule) ---------- */
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+.section-rule {
+  border: none;
+  height: 2px;
+  background: var(--accent);
+  width: 100%;
+  margin: 0 0 28px;
+  opacity: 0.85;
+}
+
+/* ---------- CV page ---------- */
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 11px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 6px 0 32px;
+}
+.cv-download:hover {
+  background: #0f3f22;
+  text-decoration: none;
+  color: #fff;
+}
+.pdf-frame {
+  width: 100%;
+  height: 780px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+.pdf-fallback {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* ---------- Research entries ---------- */
+.project {
+  margin-bottom: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+.project:last-child { border-bottom: none; }
+.project h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.project .meta {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  margin-bottom: 14px;
+}
+.project .meta .year {
+  color: var(--accent);
+  font-weight: 600;
+}
+.project p.desc {
+  margin: 0 0 16px;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 7px 14px;
+  border-radius: 5px;
+}
+.project-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+.project-links svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+
+.placeholder-note {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .hero { flex-direction: column; gap: 20px; }
+  .hero img { width: 140px; height: 140px; }
+  .hero-text h1 { font-size: 1.6rem; }
+  .site-nav .links { gap: 18px; }
+  .pdf-frame { height: 480px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
