@@ -278,8 +278,15 @@ footer .wrap {
 }
 
 .photo-credit {
-  color: #777; /* Grey color */
-  font-size: 0.75rem; /* Small character size */
-  margin-top: 5px; /* Adds a little breathing room below the image */
-  text-align: center; /* Centers the credit under the image */
+  color: #777; /* Grey text */
+  font-size: 0.85rem; /* Small character size */
+  font-style: italic; /* Italicized text */
+  font-family: Georgia, "Times New Roman", Times, serif; /* Serif font */
+  margin-top: 8px; 
+  text-align: left; /* Left-aligned */
+}
+
+/* Ensure the wrapper only takes up the width of the image so the left-alignment matches the photo's edge */
+.hero-image-wrapper {
+  display: inline-block; 
 }
