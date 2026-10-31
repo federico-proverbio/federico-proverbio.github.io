@@ -276,3 +276,10 @@ footer .wrap {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.photo-credit {
+  color: #777; /* Grey color */
+  font-size: 0.75rem; /* Small character size */
+  margin-top: 5px; /* Adds a little breathing room below the image */
+  text-align: center; /* Centers the credit under the image */
+}
